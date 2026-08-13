@@ -50,6 +50,27 @@ describe('<QrCanvas /> component', () => {
     expect(foregroundPixel).toEqual(Uint8ClampedArray.from([0, 0, 255, 255]));
   });
 
+  it('renders margin in QR modules', async () => {
+    const devicePixelRatio = vi.spyOn(window, 'devicePixelRatio', 'get').mockReturnValue(1);
+
+    try {
+      const { container, unmount } = await render(
+        <QrCanvas bgColor="#ff0000" fgColor="#0000ff" margin={4} value="Hello world" width={290} />,
+      );
+
+      const context = container.querySelector('canvas')?.getContext('2d');
+      const lastMarginPixel = context?.getImageData(39, 39, 1, 1).data;
+      const firstQrPixel = context?.getImageData(40, 40, 1, 1).data;
+
+      expect(lastMarginPixel).toEqual(Uint8ClampedArray.from([255, 0, 0, 255]));
+      expect(firstQrPixel).toEqual(Uint8ClampedArray.from([0, 0, 255, 255]));
+
+      await unmount();
+    } finally {
+      devicePixelRatio.mockRestore();
+    }
+  });
+
   it('draws the QR code using gradients and patterns', async () => {
     const fillStyleContext = document.createElement('canvas').getContext('2d');
     const patternSource = document.createElement('canvas');
