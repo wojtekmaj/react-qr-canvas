@@ -1,6 +1,6 @@
 {
   "name": "@wojtekmaj/react-qr-canvas",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Render QR codes on an HTML canvas in your React app",
   "type": "module",
   "sideEffects": false,
