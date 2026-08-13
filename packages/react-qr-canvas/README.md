@@ -8,7 +8,7 @@ Render QR codes on an HTML canvas in your React app.
 
 - Install by executing `npm install @wojtekmaj/react-qr-canvas` or `yarn add @wojtekmaj/react-qr-canvas`.
 - Import by adding `import QrCanvas from '@wojtekmaj/react-qr-canvas'`.
-- Use by adding `<QrCanvas value="Hello world" />`.
+- Use by adding `<QrCanvas margin={4} value="Hello world" />`.
 
 ## Demo
 
@@ -36,7 +36,7 @@ import QrCanvas from '@wojtekmaj/react-qr-canvas';
 function MyApp() {
   return (
     <div>
-      <QrCanvas value="Hello world" />
+      <QrCanvas margin={4} value="Hello world" />
     </div>
   );
 }
@@ -57,7 +57,7 @@ Renders a QR code on an HTML canvas.
 | bgColor   | Background fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"white"`     | `"beige"`, `gradient`, `pattern`                                        |
 | fgColor   | Foreground fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"black"`     | `"black"`, `gradient`, `pattern`                                        |
 | level     | [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`. | `"L"`         | `"M"`                                                                  |
-| margin    | Margin in pixels.                                                                                                       | `0`           | `4`                                                                    |
+| margin    | Quiet zone around the QR code, in modules. A value of 4 is recommended.                                                 | `0`           | `4`                                                                    |
 | type      | Type (size). Can be any number from 0 to 40. Set to `0` or leave as undefined to use the smallest possible size.        | `0`           | `10`                                                                   |
 | value     | Value to render.                                                                                                        | n/a           | `"Hello world"`                                                        |
 

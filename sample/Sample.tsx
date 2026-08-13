@@ -17,7 +17,7 @@ export default function Sample() {
       </header>
       <div className="Sample__container">
         <main className="Sample__container__content">
-          <QrCanvas value={value} width={256} />
+          <QrCanvas margin={4} value={value} width={256} />
           <div>
             <label>
               <input type="text" onChange={onChange} value={value} />
