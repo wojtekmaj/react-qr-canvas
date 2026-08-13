@@ -1,0 +1,77 @@
+{
+  "name": "@wojtekmaj/react-qr-canvas",
+  "version": "0.1.0",
+  "description": "Render QR codes on an HTML canvas in your React app",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./*"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "node -e \"fs.rmSync('./dist', { recursive: true, force: true })\"",
+    "format": "biome format",
+    "lint": "biome lint",
+    "prepack": "yarn clean && yarn build",
+    "test": "yarn lint && yarn tsc && yarn format && yarn unit",
+    "tsc": "tsc",
+    "unit": "vitest",
+    "watch": "yarn build --watch"
+  },
+  "keywords": [
+    "react",
+    "qr-code",
+    "qr",
+    "canvas"
+  ],
+  "author": {
+    "name": "Wojciech Maj",
+    "email": "kontakt@wojtekmaj.pl"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "qrcode-generator": "^2.0.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.8",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitest/browser-playwright": "^4.1.10",
+    "playwright": "^1.60.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10",
+    "vitest-browser-react": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "!**/*.spec.ts",
+    "!**/*.spec.tsx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekmaj/react-qr-canvas.git",
+    "directory": "packages/react-qr-canvas"
+  },
+  "funding": "https://github.com/wojtekmaj/react-qr-canvas?sponsor=1"
+}
