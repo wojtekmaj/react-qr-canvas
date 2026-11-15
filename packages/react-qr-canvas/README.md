@@ -52,14 +52,14 @@ Renders a QR code on an HTML canvas.
 
 #### Props
 
-| Prop name | Description                                                                                                             | Default value | Example values                                                         |
-| --------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------- |
-| bgColor   | Background fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"white"`     | `"beige"`, `gradient`, `pattern`                                        |
-| fgColor   | Foreground fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"black"`     | `"black"`, `gradient`, `pattern`                                        |
-| level     | [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`. | `"L"`         | `"M"`                                                                  |
-| margin    | Quiet zone around the QR code, in modules. A value of 4 is recommended.                                                 | `0`           | `4`                                                                    |
-| type      | Type (size). Can be any number from 0 to 40. Set to `0` or leave as undefined to use the smallest possible size.        | `0`           | `10`                                                                   |
-| value     | Value to render.                                                                                                        | n/a           | `"Hello world"`                                                        |
+| Prop name | Description                                                                                                             | Default value | Example values                   |
+| --------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------------------- |
+| bgColor   | Background fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"white"`     | `"beige"`, `gradient`, `pattern` |
+| fgColor   | Foreground fill style. Accepts a string, `CanvasGradient`, or `CanvasPattern`.                                          | `"black"`     | `"black"`, `gradient`, `pattern` |
+| level     | [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`. | `"L"`         | `"M"`                            |
+| margin    | Quiet zone around the QR code, in modules. A value of 4 is recommended.                                                 | `0`           | `4`                              |
+| type      | Type (size). Can be any number from 0 to 40. Set to `0` or leave as undefined to use the smallest possible size.        | `0`           | `10`                             |
+| value     | Value to render.                                                                                                        | n/a           | `"Hello world"`                  |
 
 You can also specify all the props that are valid for the `<canvas>` React element (e.g. `style`, `className`, `width`, or `height`). The canvas defaults to 128 × 128 CSS pixels. When only `width` is provided, `height` defaults to the same value. The backing bitmap automatically scales with `window.devicePixelRatio` to remain sharp on HiDPI screens.
 
